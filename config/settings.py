@@ -2,6 +2,8 @@
 
 import os
 
+env = os.environ
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -15,7 +17,7 @@ SECRET_KEY = 'x1h7+p2$vz)*2_j1ckgzb9okl#cb#7_1*g1a)421!z@u=-ypny'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [env.get('HOST', 'localhost')]
 
 
 # Application definition

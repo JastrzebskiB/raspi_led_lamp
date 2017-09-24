@@ -1,21 +1,13 @@
 # This is a README.
 ## Hi!
 
-This is a cookiecutter.
-It has:
-* IPython (and django_extensions to use `python manage.py shell plus`)
-* Tests moved to a separate directory
-* Config has DRF, django_extensions and existing apps added
-* AppConfig moved to init in both apps (no need to clutter the directories)
-* Accounts app using the django.contrib.auth model
-* Empty Template app with models, serializers and views that only contain
-  imports
-* This **README!**
+This is a remotely controlled, Raspberry Pi powered LED lamp.
+A lot of shit is hardcoded at the moment and the whole thing is rough around the
+edges as hell.
+But I just wanted to get it to work, so I'm fine with that.
 
-Please remember to:
-* pip freeze > requirements.txt if you're going to collaborate
-* use scripts for things that you're going to do repetitively
-
-"Features" to add (`#TODO`, mainly because I want to do something with this
-in the future and having a TODO helps me do that):
-* url confs moved to each app
+## Running the server in background
+export HOST=raspi.url.on.lan
+screen (to access screen session run screen -r)
+python3 manage.py runserver 0.0.0.0:8000
+[ctrl] + [a], then [d]
