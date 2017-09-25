@@ -15,17 +15,17 @@ class LedService(RaspiServiceBaseMixin):
         super().__init__(*args, **kwargs)
         self.pins = pins
 
-    def set_up():
+    def set_up(self):
         super().set_up()
         for pin in self.pins:
             GPIO.setup(pin, GPIO.OUT)
 
-    def turn_on():
+    def turn_on(self):
         set_up()
         for pin in self.pins:
             GPIO.output(pin, GPIO.HIGH)
 
-    def turn_off():
+    def turn_off(self):
         set_up()
         for pin in self.pins:
             GPIO.output(pin, GPIO.LOW)
