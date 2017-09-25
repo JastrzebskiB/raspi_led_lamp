@@ -2,10 +2,10 @@ import RPi.GPIO as GPIO
 
 
 class RaspiServiceBaseMixin:
-    def set_up():
+    def set_up(self):
         GPIO.setmode(GPIO.BOARD)
 
-    def tear_down():
+    def tear_down(self):
         GPIO.cleanup()
 
 
