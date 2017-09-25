@@ -21,12 +21,12 @@ class LedService(RaspiServiceBaseMixin):
             GPIO.setup(pin, GPIO.OUT)
 
     def turn_on(self):
-        set_up()
+        self.set_up()
         for pin in self.pins:
             GPIO.output(pin, GPIO.HIGH)
 
     def turn_off(self):
-        set_up()
+        self.set_up()
         for pin in self.pins:
             GPIO.output(pin, GPIO.LOW)
-        tear_down()
+        self.tear_down()
