@@ -1,5 +1,3 @@
-"""Cookiecutter settings"""
-
 import os
 
 env = os.environ
@@ -36,7 +34,7 @@ INSTALLED_APPS = [
     'django_extensions',
     # Apps
     'accounts.AccountsConfig',
-    'template.TemplateConfig',
+    'raspi.RaspiConfig',
 ]
 
 MIDDLEWARE = [
@@ -121,3 +119,8 @@ STATIC_URL = '/static/'
 
 # App config
 MAX_STRING_LENGTH = 255
+
+# Configure actual physical wiring of pins
+from raspi.gpio_pins import GPIO_12, GPIO_18, GPIO_23, GPIO_24, GPIO_25
+
+PINS = (GPIO_12, GPIO_18, GPIO_23, GPIO_24, GPIO_25)
