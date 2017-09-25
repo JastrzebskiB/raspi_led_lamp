@@ -10,7 +10,6 @@ class RaspiServiceBaseMixin:
 
 
 # TODO: this can probably be much more robust
-# TODO: this is a fake comment that can be removed; git commit --amend is bad
 class LedService(RaspiServiceBaseMixin):
     def __init__(self, pins, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -26,7 +25,7 @@ class LedService(RaspiServiceBaseMixin):
         for pin in self.pins:
             GPIO.output(pin, GPIO.HIGH)
 
-    def turn_leds_off():
+    def turn_off():
         set_up()
         for pin in self.pins:
             GPIO.output(pin, GPIO.LOW)
