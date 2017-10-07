@@ -13,5 +13,7 @@ def turn_off(request):
     return HttpResponse('You have turned off the lights!')
 
 def capture_picture(request):
-    image_tempfile = ImageCaptureService().capture()
-    return HttpResponse(image_tempfile.read(), content_type='image/png')
+    pillow_image= ImageCaptureService().capture()
+    response = HttpResponse(content_type='image/png')
+
+    return response

@@ -1,4 +1,5 @@
 from io import BytesIO
+from PIL import Image
 from time import sleep
 
 from picamera import PiCamera
@@ -42,6 +43,8 @@ class ImageCaptureService:
         stream = BytesIO()
         camera = PiCamera(resolution=(1280, 720))
         sleep(2)  # Camera boot time
-        photo = camera.capture(stream, 'jpg')
+        photo = camera.capture(stream, format='jpeg')
+        stream.seek(0)
+        image = Image.open(stream)
 
-        return stream
+        return image
