@@ -15,7 +15,8 @@ SECRET_KEY = 'x1h7+p2$vz)*2_j1ckgzb9okl#cb#7_1*g1a)421!z@u=-ypny'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [env.get('HOST', 'localhost')]
+# Stopped working after installing picamera
+ALLOWED_HOSTS = ['localhost', env.get('HOST')]
 
 
 # Application definition

@@ -41,7 +41,7 @@ class ImageCaptureService:
     def capture(self):
         tempfile = TemporaryFile()
         camera = PiCamera(resolution=(1280, 720))
-        time.sleep(2)  # Camera boot time
+        sleep(2)  # Camera boot time
         camera.capture(tempfile, format='.jpg')
 
         return tempfile
