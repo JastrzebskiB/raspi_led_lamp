@@ -1,4 +1,4 @@
-from tempfile import TemporaryFile
+from io import BytesIO
 from time import sleep
 
 from picamera import PiCamera
@@ -39,9 +39,9 @@ class LedService(RaspiServiceBaseMixin):
 # TODO: Make this configurable
 class ImageCaptureService:
     def capture(self):
-        tempfile = TemporaryFile()
+        stream = BytesIO()
         camera = PiCamera(resolution=(1280, 720))
         sleep(2)  # Camera boot time
-        camera.capture(tempfile, format='.jpg')
+        photo = camera.capture(stream, 'jpg')
 
-        return tempfile
+        return stream
