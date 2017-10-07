@@ -1,3 +1,7 @@
+from tempfile import TemporaryFile
+from time import sleep
+
+from picamera import PiCamera
 import RPi.GPIO as GPIO
 
 
@@ -30,3 +34,13 @@ class LedService(RaspiServiceBaseMixin):
         for pin in self.pins:
             GPIO.output(pin, GPIO.LOW)
         self.tear_down()
+
+
+# TODO: Make this configurable
+class ImageCaptureService:
+    def capture(self):
+        camera = PiCamera(resolution=(1280, 720))
+        tempfile = TemporaryFile()
+        camera.capture(tempfile, format='.png')
+
+        return tempfile
